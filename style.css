@@ -1,0 +1,125 @@
+body {
+    background-color: #000000 !important; /* Set the background color to black with high priority */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FFFDEF; /* Default text color to white */
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-footer-bg {
+    background-color: transparent; /* Background color for navigation and footer */
+}
+
+.nav-footer-bg a, .nav-footer-bg p {
+    color: #FFFDEF; /* Font color for navigation and footer */
+}
+
+button {
+    background-color: transparent; /* Match button color with font color */
+    border: 2px solid #FFFDEF; /* Border to make the button visible */
+    color: #FFFDEF; /* Font color for the button text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color change */
+    padding: 0.75rem 2rem; /* Padding for buttons */
+    border-radius: 0.5rem; /* Rounded corners */
+    font-size: 1.125rem; /* Font size for buttons */
+    display: inline-block; /* Ensure buttons are inline-block */
+}
+
+button:hover {
+    background-color: #FFFDEF; /* Background color on hover */
+    color: #000000; /* Font color on hover */
+}
+
+.font-main {
+    font-family: 'Lexend', sans-serif; /* Updated font family */
+}
+
+.main-content-container {
+    margin-right: 16rem; /* Ensure space for the navigation on the right */
+}
+
+h1 {
+    margin-bottom: -2rem; /* Adjust this value to control the space between heading and subtext */
+    font-size: 10rem; /* Ensure the heading is large */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Minimal shadow effect */
+}
+
+#subtext {
+    margin-bottom: 1rem; /* Adjust this value to control the space between subtext and button */
+    font-size: 3rem; /* Ensure the subtext is large */
+    line-height: 1; /* Adjust this value to control the space within the text element */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Minimal shadow effect */
+}
+
+.spline-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: black; /* Set background color to black */
+}
+
+/* Ensure the Spline viewer fills the container */
+spline-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+#chatbox-container {
+    background-color: #000000; /* Ensure the background color matches the body */
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.custom-text-size {
+    font-size: 1.5rem; /* Adjust to the desired size */
+}
+
+.block {
+    z-index: 100;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+
+    .ml-64 {
+        margin-right: 60px;
+    }
+    
+    .text-9xl {
+        font-size: 6rem;
+    }
+
+    .text-3xl {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-9xl {
+        font-size: 4rem;
+    }
+
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+
+    .px-8 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .py-4 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .mx-4 {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+}
+

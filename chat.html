@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lualhati.ai</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/gsap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="text-white flex flex-col min-h-screen relative">
+
+    <nav class="flex justify-end p-6 nav-footer-bg font-main z-10">
+        <a href="landing.html" class="text-lg mx-4 hover:underline">home</a>
+        <a href="chat.html" class="text-lg mx-4 hover:underline">lualhati.ai</a>
+        <a href="about.html" class="text-lg mx-4 hover:underline">about</a>
+    </nav>
+
+    <div id="chatbox-container">
+        <chaindesk-chatbox-standard style="width: 100%; height: 360px;"></chaindesk-chatbox-standard>
+    </div>
+
+    <footer class="p-6 text-center nav-footer-bg font-main z-10">
+        <p>&copy; 2024 lualhati.ai. All rights reserved.</p>
+    </footer>
+
+    <script type="module">
+        import Chatbox from 'https://cdn.jsdelivr.net/npm/@chaindesk/embeds@latest/dist/chatbox/index.js';
+      
+        Chatbox.initStandard({
+          agentId: 'cm03aqj5w017ybp7qrn8kry0p',
+        });
+    </script>
+
+</body>
+</html>

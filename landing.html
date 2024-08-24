@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lualhati.ai</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/gsap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.20/build/spline-viewer.js"></script>
+</head>
+<body class="text-white flex flex-col min-h-screen relative">
+
+    <div class="spline-container">
+        <spline-viewer url="https://prod.spline.design/1ci5doLxaeD-O76O/scene.splinecode"></spline-viewer>
+    </div>
+
+    <nav class="flex justify-end p-6 nav-footer-bg font-main z-10">
+        <a href="landing.html" class="text-lg mx-4 hover:underline">home</a>
+        <a href="chat.html" class="text-lg mx-4 hover:underline">lualhati.ai</a>
+        <a href="about.html" class="text-lg mx-4 hover:underline">about</a>
+    </nav>
+
+    <div class="flex-grow flex items-start p-12 main-content-container z-10">
+        <div id="main-content" class="space-y-6 font-main text-left">
+            <h1 class="text-9xl font-bold opacity-0">lualhati.ai</h1>
+            <p id="subtext" class="text-3xl opacity-0">Innovation from the East.</p>
+            <button class="px-8 py-4 border-2 rounded-lg opacity-0">
+                <a href="chat.html">Try our Beta Version</a>
+            </button>
+            <button class="px-8 py-4 border-2 rounded-lg opacity-0">
+                <a href="about.html">About Us</a>
+            </button>
+        </div>
+    </div>
+
+    <footer class="p-6 text-center nav-footer-bg font-main z-10">
+        <p>&copy; 2024 lualhati.ai. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            gsap.delayedCall(2, () => {
+                gsap.fromTo("#main-content > *", 
+                    { opacity: 0, x: -50 }, 
+                    { opacity: 1, x: 0, duration: 1, stagger: 0.3, ease: "power2.out" }
+                );
+    
+               
+                const subtexts = [
+                    "Innovation from the East.",
+                    "Innovation for the East.",
+                    "Innovation by the East."
+                ];
+    
+                let index = 0;
+                const subtextElement = document.getElementById('subtext');
+    
+                
+                function updateSubtext() {
+                   
+                    gsap.to(subtextElement, { opacity: 0, duration: 0.5, onComplete: () => {
+                        
+                        subtextElement.textContent = subtexts[index];
+                        
+                        gsap.fromTo(subtextElement, 
+                            { opacity: 0 }, 
+                            { opacity: 1, duration: 0.5 }
+                        );
+                    }});
+                    index = (index + 1) % subtexts.length;
+                }
+    
+                updateSubtext();
+    
+                setInterval(updateSubtext, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
