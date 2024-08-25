@@ -82,7 +82,11 @@ spline-viewer {
     z-index: 100;
 }
 
-/* Responsive Styles */
+#gif {
+    margin-top: -14%;
+    width: 24%;
+}
+
 @media (max-width: 1024px) {
 
     .ml-64 {
@@ -123,3 +127,9 @@ spline-viewer {
     }
 }
 
+@media (max-width: 1200px) {
+
+    #gif {
+        opacity: 0;;
+    }
+}

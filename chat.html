@@ -7,9 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/gsap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
-<body class="text-white flex flex-col min-h-screen relative">
+<body class="text-white flex flex-col min-h-screen relative overflow-hidden">
 
     <nav class="flex justify-end p-6 nav-footer-bg font-main z-10">
         <a href="landing.html" class="text-lg mx-4 hover:underline">home</a>
@@ -21,6 +20,8 @@
         <chaindesk-chatbox-standard style="width: 100%; height: 360px;"></chaindesk-chatbox-standard>
     </div>
 
+    <div id="firework-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+
     <footer class="p-6 text-center nav-footer-bg font-main z-10">
         <p>&copy; 2024 lualhati.ai. All rights reserved.</p>
     </footer>
@@ -31,6 +32,46 @@
         Chatbox.initStandard({
           agentId: 'cm03aqj5w017ybp7qrn8kry0p',
         });
+
+        // GSAP Animation for Chatbox
+        window.addEventListener('load', () => {
+            gsap.from("#chatbox-container", {
+                opacity: 0,
+                y: 50,
+                duration: 1.5,
+                ease: "power3.out",
+                onComplete: () => {
+                    createFireworkEffect();
+                }
+            });
+        });
+
+        // Firework Effect Function
+        function createFireworkEffect() {
+            const fireworkContainer = document.getElementById('firework-container');
+            for (let i = 0; i < 10; i++) { // Increased number of fireworks
+                let firework = document.createElement('img');
+                firework.src = 'Assets/Chat-Animations.png'; // Updated path
+                firework.classList.add('firework');
+                firework.style.position = 'absolute';
+                firework.style.left = `${Math.random() * 100}%`;
+                firework.style.top = `${Math.random() * 100}%`;
+                firework.style.transform = `translate(-50%, -50%)`; // Centering firework image
+                fireworkContainer.appendChild(firework);
+
+                gsap.fromTo(firework, 
+                    { scale: 0 }, 
+                    { 
+                        scale: 0.7, // Smaller scale
+                        duration: 1.5, 
+                        opacity: 0, 
+                        ease: "power3.out",
+                        onComplete: () => {
+                            firework.remove();
+                        }
+                    });
+            }
+        }
     </script>
 
 </body>

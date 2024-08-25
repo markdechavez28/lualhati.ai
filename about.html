@@ -18,15 +18,15 @@
 
     <div class="flex-grow flex items-start p-12 main-content-container z-10">
         <div id="main-content" class="space-y-6 font-main text-left">
-            <p id="message" class="text-3xl opacity-0">Hi, Warriors!</p>
-            <p id="message" class="text-3xl opacity-0">lualhati.ai is here to help you navigate the University of the East.</p>
-            <p id="message" class="text-3xl opacity-0">Although at its infancy, you still tried to visit us! Thanks for that.</p>
-            <p id="message" class="text-3xl opacity-0">Have you tried the bubble chat version of lualhati.ai? ↘↘↘</p>
-            <p id="message" class="text-3xl opacity-0">It's our secret for now.</p>
-            <p id="message" class="text-3xl opacity-0">With love, Mark</p>
-            <img id="gif" src="Assets/Chat-2.gif" alt="" class="hidden">
+            <p id="message" class="text-3xl opacity-0 text-hover-effect">Hi, Warriors!</p>
+            <p id="message" class="text-3xl opacity-0 text-hover-effect">lualhati.ai is here to help you navigate the University of the East.</p>
+            <p id="message" class="text-3xl opacity-0 text-hover-effect">Although at its infancy, you still tried checking us! Thanks for that.</p>
+            <p id="message" class="text-3xl opacity-0 text-hover-effect">Have you tried the bubble chat version of lualhati.ai? ↘↘↘</p>
+            <p id="message" class="text-3xl opacity-0 text-hover-effect">It's our secret for now.</p>
         </div>
     </div>
+
+    <img id="gif" src="Assets/Chat-2.gif" alt="" class="pl-4 opacity-0">
 
     <footer class="p-6 text-center nav-footer-bg font-main z-10">
         <p>&copy; 2024 lualhati.ai. All rights reserved.</p>
@@ -69,6 +69,11 @@
                     { opacity: 1, x: 0, duration: 1, stagger: 0.1, ease: "power2.out" }
                 );
     
+                gsap.fromTo("#gif", 
+                    { opacity: 0 }, 
+                    { opacity: 1, duration: 1, delay: 2.5, ease: "power2.out" }
+                );
+
                 const subtexts = [
                     "Innovation from the East.",
                     "Innovation for the East.",
